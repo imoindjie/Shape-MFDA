@@ -1,14 +1,14 @@
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-source('functions/packages.R')
-source('functions/object_format.R') ## The definition of the format shapes and mvshapes
-source('functions/mvshapes_functions.R') ## Associate functions for mvshapes
-source('functions/align_functions.R') ## Functions for alignment (optimization) 
-source('functions/Frechet_mean.R') ## Estimation of the Frechet mean 
-source('functions/basis_expansion.R') ## Basis expansion functions (fda)
-source('functions/uni_functions.R') ## Functions defined for univariate shape (A functional approach etc. )
-source('functions/tangent_project.R') ## The transformation into the tangent space 
-source('functions/classification models.R') ## The used methods for classification 
+source('function/packages.R')
+source('function/object_format.R') ## The definition of the format shapes and mvshapes
+source('function/mvshapes_functions.R') ## Associate functions for mvshapes
+source('function/align_functions.R') ## Functions for alignment (optimization) 
+source('function/Frechet_mean.R') ## Estimation of the Frechet mean 
+source('function/basis_expansion.R') ## Basis expansion functions (fda)
+source('function/uni_functions.R') ## Functions defined for univariate shape (A functional approach etc. )
+source('function/tangent_project.R') ## The transformation into the tangent space 
+source('function/classification models.R') ## The used methods for classification 
 
 XY=readRDS('cardio/data.RDS') ## Cardiomegaly data with parameterization and rotation
 
@@ -94,3 +94,4 @@ Classical=c(GPLasso(B0, A0, A0_val, Y_val, Y_apr), LDA(A0, A0_val, Y_val, Y_apr)
 
 message(paste0('Our approach: ', paste0((round(Our_approach, 2)*100), collapse = ',')))
 message(paste0('Classical FDA: ', paste0((round(Classical, 2)*100), collapse = ',')))
+
